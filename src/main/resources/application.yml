@@ -14,17 +14,20 @@ spring:
     encoding: UTF-8
     enable-spring-el-compiler: true
     mode: html
-  devtools:
-    restart:
-      enabled: true
-      log-condition-evaluation-delta: true
-    livereload:
-      enabled: false
+  datasource:
+   url: jdbc:mysql://localhost:3306/db
+   username: 
+   password:
+   driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+    hibernate.ddl-auto: update
 
 server:
   servlet:
     context-path: /emozon
-  port: 8080
+  port: 1919
 
 logging.file: demo.log
 logging:
